@@ -42,6 +42,9 @@ html {
     margin: 1rem 0;
     font-size: 2.5rem;
   }
+  figure {
+    max-width: fit-content;
+  }
   
   /* nav styles */
   .hamburger {

@@ -1,6 +1,5 @@
 ---
-
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About Me";
 const identity = {
   firstName: "Sarah",
@@ -16,52 +15,52 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
 const skillColor = "navy";
 const fontWeight = "bold";
-const textCase = "uppercase"
-
+const textCase = "uppercase";
 ---
-    <BaseLayout pageTitle={pageTitle}>
-      <style define:vars={{ skillColor, fontWeight, textCase }}>
-        .skill {
-          color: var(--skillColor);
-          font-weight: var(--fontWeight);
-          text-transform: var(--textCase);
-        }
-      </style>
-      <p>
-        So, yeah this is the second page ever built. Imma do something later. Keep
-        checkin!
-      </p>
-  
-      <p>Here are a few facts about me:</p>
-      <ul>
-        <li>My name is {identity.firstName}.</li>
+
+<style define:vars={{ skillColor, fontWeight, textCase }}>
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
+
+<BaseLayout pageTitle={pageTitle}>
+  <p>
+    So, yeah this is the second page ever built. Imma do something later. Keep
+    checkin!
+  </p>
+
+  <p>Here are a few facts about me:</p>
+  <ul>
+    <li>My name is {identity.firstName}.</li>
+    <li>
+      I live in {identity.country} and I work as a {identity.occupation}.
+    </li>
+    {
+      identity.hobbies.length >= 2 && (
         <li>
-          I live in {identity.country} and I work as a {identity.occupation}.
+          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
         </li>
-        {
-          identity.hobbies.length >= 2 && (
-            <li>
-              Two of my hobbies are: {identity.hobbies[0]} and{" "}
-              {identity.hobbies[1]}
-            </li>
-          )
-        }
-      </ul>
-      <p>My skills are:</p>
-      <ul>
-        {skills.map((skill) => <li class="skill">{skill}</li>)}
-      </ul>
-      {
-        happy && (
-          <p>I currently Happy!(yes, my webpage knows my mood in real time)</p>
-        )
-      }
-      {finished && <p>I finished this tutorial!</p>}
-      {
-        goal === 3 ? (
-          <p>My goal about to finish in 3 days.</p>
-        ) : (
-          <p>Not gonna reach my goal in 3 days</p>
-        )
-      }
-    </BaseLayout>
+      )
+    }
+  </ul>
+  <p>My skills are:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+  {
+    happy && (
+      <p>I currently Happy!(yes, my webpage knows my mood in real time)</p>
+    )
+  }
+  {finished && <p>I finished this tutorial!</p>}
+  {
+    goal === 3 ? (
+      <p>My goal about to finish in 3 days.</p>
+    ) : (
+      <p>Not gonna reach my goal in 3 days</p>
+    )
+  }
+</BaseLayout>
