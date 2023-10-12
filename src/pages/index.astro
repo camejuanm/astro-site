@@ -1,13 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Greeting.jsx";
 const pageTitle = "Home Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-<h2>Hello there! Welcome to my website!</h2>
+  <h2>Hello there! Welcome to my website!</h2>
 
   <img
     src="https://source.unsplash.com/-Go4DH2pZbc"
-    alt="A picture of a puppy"/ width="300">
-
+    alt="A picture of a puppy"
+    width="300"
+  />
+  <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there", "Bonjour"]} />
 </BaseLayout>
