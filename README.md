@@ -1,16 +1,10 @@
-# Astro Starter Kit: Basics
+# November Update: Containerized
+channeling my inner devops engineer, I tried to containerize this app by using multi stage build
 
-```
-npm create astro@latest -- --template basics
-```
+Stage 1: builder is the build stage where I build a static website using npm
+Stage 2: using nginx to deploy the built app
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+will update on how to do it in this README, stay tuned!
 
 ## 🚀 Project Structure
 
