@@ -1,4 +1,4 @@
-FROM node:lts as builder
+FROM node:lts-alpine3.17 as builder
 
 # Copy files as a non-root user. The `node` user is built in the Node image.
 WORKDIR /app
@@ -11,6 +11,6 @@ RUN npm ci && npm cache clean --force
 COPY ./src ./src
 RUN npm run build
 
-FROM nginx as serve
+FROM nginx:1.25.3-alpine as serve
 COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 80
